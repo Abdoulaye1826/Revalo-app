@@ -115,17 +115,17 @@
                                 <!-- Date de naissance et Genre -->
                                 <div class="form-row">
                                     <div class="form-group-custom half-width">
-                                        <label for="birth_date" class="form-label-custom">
+                                        <label for="date_naissance" class="form-label-custom">
                                             <i class="fas fa-calendar input-icon"></i>
                                             Date de naissance
                                         </label>
-                                        <input id="birth_date" 
+                                        <input id="date_naissance" 
                                                type="date" 
-                                               class="form-control-custom @error('birth_date') is-invalid @enderror" 
-                                               name="birth_date" 
-                                               value="{{ old('birth_date') }}" 
+                                               class="form-control-custom @error('date_naissance') is-invalid @enderror" 
+                                               name="date_naissance" 
+                                               value="{{ old('date_naissance') }}" 
                                                required>
-                                        @error('birth_date')
+                                        @error('date_naissance')
                                             <div class="error-message">
                                                 <i class="fas fa-exclamation-circle"></i>
                                                 {{ $message }}
@@ -202,7 +202,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <!-- Type d'utilisateur -->
+                                <div class="form-group-custom">
+                                    <label for="type" class="form-label-custom">
+                                        <i class="fas fa-users input-icon"></i>
+                                        Type d'utilisateur
+                                    </label>
+                                    <select id="type"
+                                            class="form-control-custom @error('type') is-invalid @enderror"
+                                            name="type"
+                                            required>
+                                        <option value="">Sélectionner</option>
+                                        <option value="entreprise" {{ old('type') == 'entreprise' ? 'selected' : '' }}>entreprise</option>
+                                        <option value="acheteur" {{ old('type') == 'acheteur' ? 'selected' : '' }}>acheteur</option>
+                                    </select>
+                                    @error('type')
+                                        <div class="error-message">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                                 <!-- Password Strength Indicator -->
                                 <div class="password-strength">
                                     <div class="strength-meter">

@@ -18,10 +18,12 @@ class User extends Authenticatable
         'nom',
         'email',
         'telephone',
-        'birth_date',
+        'date_naissance',
         'gender',
         'newsletter',
         'password',
+        'type', // 1: Admin, 2: Entreprise, 3: Acheteur
+        'terms', // Acceptation des termes et conditions
     ];
 
     /**
@@ -37,7 +39,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'birth_date' => 'date',
+        'date_naissance' => 'date',
         'newsletter' => 'boolean',
     ];
 }

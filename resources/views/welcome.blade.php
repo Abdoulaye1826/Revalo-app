@@ -419,6 +419,13 @@
                 </div>
             </div>
             <div class="nav-links">
+
+                <a href="#features" class="nav-link">
+                    <i class="fas fa-info-circle"></i> Notre Mission
+                </a>
+                <a href="#stats" class="nav-link">
+                    <i class="fas fa-chart-bar"></i> Nos Impacts
+                </a>
                 <a href="/login" class="nav-link">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
                 </a>

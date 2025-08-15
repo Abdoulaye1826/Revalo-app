@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('prenom'); 
             $table->string('nom'); 
             $table->string('telephone', 20);
-            $table->date('birth_date');
+            $table->date('date_naissance');
             $table->enum('gender', ['homme', 'femme', 'autre']);
             $table->boolean('newsletter')->default(false);
+            $table->tinyInteger('type')->default(3); // 1: Admin, 2: Entreprise, 3: Acheteur
+            $table->boolean('terms')->default(false); // Acceptation des termes et conditions
 
             // Champs classiques Laravel
             $table->string('email')->unique();

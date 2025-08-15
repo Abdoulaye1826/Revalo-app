@@ -22,7 +22,7 @@
                         </div>
                         
                         <div class="card-body-custom">
-                            <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                            <form method="POST" action="{{ route('auth.login') }}" class="needs-validation" novalidate="">
                                 @csrf
                                 
                                 <!-- Email Address -->
