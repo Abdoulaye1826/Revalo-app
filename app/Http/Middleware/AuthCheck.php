@@ -70,12 +70,33 @@ class AuthCheck
         $type_List = array(1, 2, 3); //A récupérer niveau de la BD
         $path_List_Access_Users = array(
 
-            //Ressources du profil secrétaire
-            'accueil' => array(1, 2, 3),
-            'dossiers' => array(1, 2),
-            'dossiers/create' => array(1, 2),
-            'dossiers/indexParent' => array(1, 2),
-            'dossiers/save' => array(1, 2),
+            //Ressources du profil administrateur
+            'dossiers/administrateur' => array(1),
+            'dossiers/administrateur/annonces' => array(1),
+            'dossiers/administrateur/utilisateurs' => array(1),
+            'dossiers/administrateur/annonce' => array(1),
+            'dossiers/administrateur/utilisateur' => array(1),
+            //Ressources du profil entreprise
+            'dossiers/entreprise' => array(2),
+            'dossiers/entreprise/create' => array(2),
+            'dossiers/entreprise/store' => array(2),    
+            'dossiers/entreprise/edit' => array(2),
+            'dossiers/entreprise/update' => array(2),
+            'dossiers/entreprise/delete' => array(2),
+            'dossiers/entreprise/demande' => array(2),
+            'dossiers/entreprise/envoyerDemande' => array(2),
+            'dossiers/entreprise/demande/annuler' => array(2),
+            'dossiers/entreprise/demande/valider' => array(2),
+            'dossiers/entreprise/demande/refuser' => array(2),
+            //Ressources du profil acheteur
+            'dossiers/acheteur' => array(3),
+            'dossiers/acheteur/demande' => array(3),
+            'dossiers/acheteur/envoyerDemande' => array(3),
+            //Ressources de connexion
+            'auth/login' => array(1, 2, 3),
+            'auth/register' => array(1, 2, 3),
+            'auth/logout' => array(1, 2, 3),
+            // Ajouter d'autres routes ici...
         );
 
 

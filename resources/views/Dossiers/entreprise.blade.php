@@ -17,6 +17,9 @@
                 <a class="nav-link" href="{{ route('acheteur.index') }}">
                     <i class="fas fa-shopping-cart"></i> Vue Acheteur
                 </a>
+                <a class="nav-link" href="{{ route('logout') }}">
+                    <i class="fas fas-logout"></i> Déconnexion
+                </a>
             </div>
         </div>
     </nav>

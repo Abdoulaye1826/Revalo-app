@@ -16,7 +16,7 @@ Route::get('/register', function () {
     return view('Auth.register');
 })->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::get('/administrateur', [AuthController::class, 'index'])->name('dossiers.administrateur');

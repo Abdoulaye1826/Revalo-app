@@ -17,7 +17,10 @@
                 <a class="nav-link" href="{{ route('entreprise.index') }}">
                     <i class="fas fa-building"></i> Vue Entreprise
                 </a>
-            </div>
+                <a class="nav-link" href="{{ route('logout') }}">
+                    <i class="fas fas-logout"></i> Déconnexion
+                </a>
+            </div> 
         </div>
     </nav>
 

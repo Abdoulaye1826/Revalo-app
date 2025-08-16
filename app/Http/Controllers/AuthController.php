@@ -41,11 +41,11 @@ class AuthController extends Controller
 
             switch ($user->type) {
                 case '1':
-                    return redirect()->route('dossiers.administrateur');
+                    return redirect()->route('administrateur.index');
                 case '2':
-                    return redirect()->route('dossiers.entreprise');
+                    return redirect()->route('entreprise.index');
                 case '3':
-                    return redirect()->route('dossiers.acheteur');
+                    return redirect()->route('acheteur.index');
                 default:
                     Auth::logout();
                     return redirect()->route('auth.login')->with('error', 'Aucun profil défini pour cet utilisateur.');

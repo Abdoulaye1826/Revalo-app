@@ -105,6 +105,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
+            /* background-image: url('/img.webp'); */
             background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>');
             background-size: cover;
@@ -419,12 +420,17 @@
                 </div>
             </div>
             <div class="nav-links">
-
+                <a href="#hero" class="nav-link">
+                    <i class="fas fa-home"></i> Accueil
+                </a>
                 <a href="#features" class="nav-link">
                     <i class="fas fa-info-circle"></i> Notre Mission
                 </a>
                 <a href="#stats" class="nav-link">
                     <i class="fas fa-chart-bar"></i> Nos Impacts
+                </a>
+                <a href="#a-propos" class="nav-link">
+                    <i class="fas fa-users"></i> À propos
                 </a>
                 <a href="/login" class="nav-link">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
@@ -437,7 +443,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <h1>ReValo</h1>
             <p>Transformons ensemble les défis environnementaux en opportunités durables grâce à l'innovation numérique</p>
@@ -481,11 +487,47 @@
                 </div>
             </div>
         </section>
+        <section class="section features" id="features">
+            <div class="container">
+                <h2 class="section-title">Pourquoi ReValo ?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation durable</h3>
+                        <p>Nous croyons en une innovation qui respecte l'environnement et améliore la qualité de vie de tous.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Impact global</h3>
+                        <p>Notre vision est de créer un impact positif à l'échelle mondiale, en collaborant avec des partenaires engagés.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Engagement social</h3>
+                        <p>Nous plaçons l'humain au cœur de notre démarche, en favorisant l'accès à la technologie pour tous.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section a propos" id="a-propos">
+            <div class="container">
+                <h2 class="section-title">À propos de ReValo</h2>
+                <p>ReValo est une initiative qui vise à transformer la gestion des déchets en une opportunité durable grâce à l'innovation numérique. Notre mission est de créer un écosystème où les déchets deviennent des ressources, favorisant ainsi une économie circulaire et durable.</p>
+                <p>Nous croyons que chaque déchet peut être valorisé, chaque ressource peut être optimisée, et chaque individu peut contribuer à un avenir plus vert. Rejoignez-nous dans cette aventure pour réinventer la gestion durable.</p>
+            </div>
+        </section>
 
         <!-- Stats Section -->
         <section class="section stats" id="stats">
             <div class="container">
-                <h2 class="section-title">Nos Impacts</h2>
+                <h2 class="section-title">Impacts Attendu</h2>
                 <div class="stats-grid">
                     <div class="stat-card">
                         <span class="stat-number" data-target="87">0</span>
@@ -606,6 +648,15 @@
             const featureCards = document.querySelectorAll('.feature-card');
             featureCards.forEach((card, index) => {
                 card.style.transitionDelay = `${index * 0.2}s`;
+            });
+        }, 100);
+
+        // Add stagger animation to stat cards
+        setTimeout(() => {
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.2}s`;
+                observer.observe(card); // Re-observe to trigger animation
             });
         }, 100);
     </script>
