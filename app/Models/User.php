@@ -19,7 +19,7 @@ class User extends Authenticatable
         'email',
         'telephone',
         'date_naissance',
-        'gender',
+        'sexe',
         'newsletter',
         'password',
         'type', // 1: Admin, 2: Entreprise, 3: Acheteur

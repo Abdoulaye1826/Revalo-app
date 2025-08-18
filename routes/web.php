@@ -31,12 +31,25 @@ Route::prefix('entreprise')->name('entreprise.')->group(function () {
     Route::get('/edit/{id}', [EntrepriseController::class, 'edit'])->name('edit');
     Route::put('/update/{id}', [EntrepriseController::class, 'update'])->name('update');
     Route::delete('/delete/{id}', [EntrepriseController::class, 'destroy'])->name('destroy');
+    Route::get('/annonces', [EntrepriseController::class, 'index'])->name('annonces');
+    Route::get('/demandes', [EntrepriseController::class, 'demandes'])->name('demandes');
+    Route::get('/demandes/{id}', [EntrepriseController::class, 'showDemande'])->name('demandes.show');
+    Route::post('/demandes/{id}/statut', [EntrepriseController::class, 'updateStatutDemande'])->name('demandes.statut');
+    Route::get('/entreprise/demandes', [EntrepriseController::class, 'demandes'])->name('entreprise.demandes');
+    Route::put('/entreprise/demandes/{id}/statut', [EntrepriseController::class, 'updateStatutDemande'])->name('entreprise.demandes.statut');
+  
 });
 
 // Routes pour les Acheteurs
 Route::prefix('acheteur')->name('acheteur.')->group(function () {
     Route::get('/', [AcheteurController::class, 'index'])->name('index');
     Route::post('/demande/{id}', [AcheteurController::class, 'envoyerDemande'])->name('demande');
+    Route::get('/annonces', [AcheteurController::class, 'index'])->name('annonces');
+    Route::get('/mes-demandes', [AcheteurController::class, 'mesDemandes'])->name('mes-demandes');
+    Route::get('/mes-demandes/{id}', [AcheteurController::class, 'showDemande'])->name('mes-demandes.show');
+    Route::post('/mes-demandes/{id}/statut', [AcheteurController::class, 'updateStatutDemande'])->name('mes-demandes.statut');
+    Route::get('/acheteur/mes-demandes', [AcheteurController::class, 'mesDemandes'])->name('acheteur.mes-demandes');
+
 });
 
 Route::prefix('administrateur')->name('administrateur.')->group(function () {

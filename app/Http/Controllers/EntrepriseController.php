@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Annonce;
+use App\Models\DemandeAchat;
 use Illuminate\Support\Facades\Storage;
 
 class EntrepriseController extends Controller
@@ -113,5 +114,32 @@ class EntrepriseController extends Controller
         $annonce->delete();
 
         return redirect()->route('entreprise.index')->with('success', 'Annonce supprimée avec succès !');
+    }
+
+    /**
+     * Afficher les demandes d'achat reçues
+     */
+    public function demandes()
+    {
+        $demandes = DemandeAchat::with('annonce')
+            ->orderBy('created_at', 'desc')
+            ->get();
+            
+        return view('entreprise.demandes', compact('demandes'));
+    }
+
+    /**
+     * Mettre à jour le statut d'une demande
+     */
+    public function updateStatutDemande(Request $request, $id)
+    {
+        $request->validate([
+            'statut' => 'required|in:en_attente,accepte,refuse,traite'
+        ]);
+
+        $demande = DemandeAchat::findOrFail($id);
+        $demande->update(['statut' => $request->statut]);
+
+        return redirect()->route('entreprise.demandes')->with('success', 'Statut de la demande mis à jour !');
     }
 }

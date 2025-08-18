@@ -134,20 +134,19 @@
                                     </div>
                                     
                                     <div class="form-group-custom half-width">
-                                        <label for="gender" class="form-label-custom">
+                                        <label for="sexe" class="form-label-custom">
                                             <i class="fas fa-venus-mars input-icon"></i>
                                             Genre
                                         </label>
-                                        <select id="gender" 
-                                                class="form-control-custom @error('gender') is-invalid @enderror" 
-                                                name="gender" 
+                                        <select id="sexe" 
+                                                class="form-control-custom @error('sexe') is-invalid @enderror" 
+                                                name="sexe" 
                                                 required>
                                             <option value="">Sélectionner</option>
-                                            <option value="homme" {{ old('gender') == 'homme' ? 'selected' : '' }}>Homme</option>
-                                            <option value="femmme" {{ old('gender') == 'femme' ? 'selected' : '' }}>Femme</option>
-                                            <option value="autre" {{ old('gender') == 'autre' ? 'selected' : '' }}>Autre</option>
+                                            <option value="homme" {{ old('sexe') == 'homme' ? 'selected' : '' }}>Homme</option>
+                                            <option value="femmme" {{ old('sexe') == 'femme' ? 'selected' : '' }}>Femme</option>
                                         </select>
-                                        @error('gender')
+                                        @error('sexe')
                                             <div class="error-message">
                                                 <i class="fas fa-exclamation-circle"></i>
                                                 {{ $message }}

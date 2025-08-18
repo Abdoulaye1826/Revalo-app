@@ -83,7 +83,6 @@
                                             Se souvenir de moi
                                         </label>
                                     </div>
-
                                 </div>
                                 
                                 <!-- Submit Button -->
@@ -103,6 +102,13 @@
                                 <p>Vous n'avez pas de compte ?</p>
                                 <a href="{{ route('register') }}" class="btn-register">
                                     Créer un compte
+                                </a>
+                            </div>
+                            <!-- Bouton Retour à la page d'accueil -->
+                            <div style="text-align:center; margin-top: 1.5rem;">
+                                <a href="{{ url('/') }}" class="btn-register" style="background: var(--accent-color); color: var(--white); border-color: var(--accent-color);">
+                                    <i class="fas fa-home" style="margin-right: 0.5rem;"></i>
+                                    Retour à l'accueil
                                 </a>
                             </div>
                         </div>

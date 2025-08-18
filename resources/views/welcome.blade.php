@@ -105,9 +105,9 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-image: url('/img.webp');
-            /* background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)),  */
-                        /* url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>'); */
+            /* background-image: url('/III.JPG'); */
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -423,11 +423,14 @@
                 <a href="#features" class="nav-link">
                     <i class="fas fa-info-circle"></i> Notre Mission
                 </a>
-                <a href="#stats" class="nav-link">
-                    <i class="fas fa-chart-bar"></i> Nos Impacts
+                <a href="#objectifs" class="nav-link">
+                    <i class="fas fa-bullseye"></i> Nos Objectifs
                 </a>
                 <a href="#a-propos" class="nav-link">
                     <i class="fas fa-users"></i> À propos
+                </a>
+                <a href="#stats" class="nav-link">
+                    <i class="fas fa-chart-bar"></i> Nos Impacts
                 </a>
                 <a href="/login" class="nav-link">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
@@ -440,19 +443,37 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1>ReValo</h1>
-            <p>Transformons ensemble les défis environnementaux en opportunités durables grâce à l'innovation numérique</p>
-            <a href="#features" class="cta-button">
-                <i class="fas fa-rocket"></i> Découvrir notre vision
-            </a>
+    <section class="hero" id="hero" style="position: relative;">
+        <div class="hero-content" style="position: relative; z-index: 2;">
+            <h1>
+                <span style="display: inline-block; background: rgba(255,255,255,0.12); border-radius: 18px; padding: 0.3em 1em;">
+                    <i class="fas fa-leaf" style="color: #fff; margin-right: 0.5rem; animation: float 3s ease-in-out infinite;"></i>
+                    ReValo
+                </span>
+            </h1>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem;">
+                <span style="background: rgba(46,204,113,0.13); color: #fff; border-radius: 10px; padding: 0.4em 1em;">
+                    Transformons ensemble les défis environnementaux en <span style="font-weight:600; color:#fff;">opportunités durables</span> grâce à l'<span style="color:#ffe082; font-weight:600;">innovation numérique</span>
+                </span>
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#features" class="cta-button" style="display: flex; align-items: center; gap: 0.7em;">
+                    <i class="fas fa-rocket"></i> Découvrir notre vision
+                </a>
+            </div>
         </div>
-        <div class="scroll-indicator">
+        <!-- Animated Decorative SVGs -->
+        <svg style="position: absolute; top: 10%; left: 5%; z-index:1;" width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="40" fill="#2ECC71" fill-opacity="0.12"/>
+        </svg>
+        <svg style="position: absolute; bottom: 10%; right: 8%; z-index:1;" width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <ellipse cx="30" cy="30" rx="30" ry="20" fill="#fff" fill-opacity="0.08"/>
+        </svg>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" style="z-index: 3; cursor: pointer;">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
-
     <!-- Main Content -->
     <main class="main-content">
         <!-- Features Section -->
@@ -484,7 +505,7 @@
                 </div>
             </div>
         </section>
-        <section class="section features" id="features">
+        <section class="section objetifs" id="objectifs">
             <div class="container">
                 <h2 class="section-title">Pourquoi ReValo ?</h2>
                 <div class="features-grid">
@@ -512,15 +533,47 @@
                 </div>
             </div>
         </section>
-        
-        <section class="section a propos" id="a-propos">
-            <div class="container">
-                <h2 class="section-title">À propos de ReValo</h2>
-                <p>ReValo est une initiative qui vise à transformer la gestion des déchets en une opportunité durable grâce à l'innovation numérique. Notre mission est de créer un écosystème où les déchets deviennent des ressources, favorisant ainsi une économie circulaire et durable.</p>
-                <p>Nous croyons que chaque déchet peut être valorisé, chaque ressource peut être optimisée, et chaque individu peut contribuer à un avenir plus vert. Rejoignez-nous dans cette aventure pour réinventer la gestion durable.</p>
+        <section class="section a-propos" id="a-propos" style="background: linear-gradient(135deg, #e8f5e9 60%, #ffffff 100%); position: relative; overflow: hidden;">
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 class="section-title" style="margin-bottom: 2rem;">
+                    <i class="fas fa-seedling" style="color: #27AE60; margin-right: 0.5rem;"></i>
+                    À propos de ReValo
+                </h2>
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                    <div style="flex: 1 1 300px; min-width: 260px;">
+                        <p style="font-size: 1.15rem; color: #333; margin-bottom: 1.2rem;">
+                            <span style="background: #2ECC71; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
+                                <i class="fas fa-recycle"></i>
+                            </span>
+                            ReValo est une initiative qui vise à transformer la gestion des déchets en une opportunité durable grâce à l'innovation numérique.
+                        </p>
+                        <p style="font-size: 1.15rem; color: #333;">
+                            <span style="background: #27AE60; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
+                                <i class="fas fa-leaf"></i>
+                            </span>
+                            Notre mission est de créer un écosystème où les déchets deviennent des ressources, favorisant ainsi une économie circulaire et durable.
+                        </p>
+                        <div style="margin-top: 2rem;">
+                            <button id="joinUsBtn" style="background: #2ECC71; color: #fff; border: none; border-radius: 30px; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(46,204,113,0.15); transition: background 0.2s;">
+                                <i class="fas fa-hands-helping"></i> Rejoignez-nous
+                            </button>
+                        </div>
+                    </div>
+                    <div style="flex: 1 1 300px; min-width: 260px; text-align: center;">
+                        <div style="display: inline-block; background: #fff; border-radius: 50%; box-shadow: 0 8px 32px rgba(46,204,113,0.13); padding: 2rem;">
+                            <i class="fas fa-globe-europe" style="font-size: 3.5rem; color: #27AE60; animation: float 3s ease-in-out infinite;"></i>
+                        </div>
+                        <p style="margin-top: 1.5rem; color: #666; font-style: italic;">
+                            "Chaque déchet peut être valorisé, chaque ressource optimisée, chaque individu acteur d'un avenir plus vert."
+                        </p>
+                    </div>
+                </div>
             </div>
+            <!-- Decorative SVG background -->
+            <svg style="position: absolute; bottom: -40px; right: -60px; z-index: 1;" width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="110" cy="60" rx="110" ry="60" fill="#2ECC71" fill-opacity="0.08"/>
+            </svg>
         </section>
-
         <!-- Stats Section -->
         <section class="section stats" id="stats">
             <div class="container">
@@ -547,6 +600,34 @@
         </section>
     </main>
 
+    
+    <script>
+        // Scroll indicator click scrolls to next section
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            const nextSection = document.querySelector('#features');
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        // Animate hero text on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.opacity = 0;
+            heroContent.style.transform = 'translateY(40px)';
+            setTimeout(() => {
+                heroContent.style.transition = 'all 1s cubic-bezier(.77,0,.18,1)';
+                heroContent.style.opacity = 1;
+                heroContent.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    </script>
+    <script>
+        // Interactivity for "Rejoignez-nous" button
+        document.getElementById('joinUsBtn').addEventListener('click', function() {
+            window.location.href = '/register';
+        });
+    </script>
     <script>
         // Header scroll effect
         window.addEventListener('scroll', () => {
