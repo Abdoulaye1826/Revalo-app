@@ -6,15 +6,28 @@ use Illuminate\Http\Request;
 use App\Models\Annonce;
 use App\Models\DemandeAchat;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class EntrepriseController extends Controller
 {
     /**
-     * Afficher la liste des annonces de l'entreprise
+     * Constructeur pour s'assurer que l'utilisateur est connecté
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('AuthCheck');
+    // }
+
+    /**
+     * Afficher la liste des annonces de l'entreprise connectée UNIQUEMENT
      */
     public function index()
     {
-        $annonces = Annonce::orderBy('created_at', 'desc')->get();
+        // Récupérer SEULEMENT les annonces de l'entreprise connectée
+        $annonces = Annonce::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
+            
         return view('dossiers.entreprise', compact('annonces'));
     }
 
@@ -43,6 +56,9 @@ class EntrepriseController extends Controller
         ]);
 
         $data = $request->only(['titre', 'description', 'categorie', 'quantite', 'prix', 'localisation']);
+        
+        // IMPORTANT : Associer l'annonce à l'entreprise connectée
+        $data['user_id'] = Auth::id();
 
         // Gérer l'upload d'image
         if ($request->hasFile('image')) {
@@ -60,7 +76,10 @@ class EntrepriseController extends Controller
      */
     public function edit($id)
     {
-        $annonce = Annonce::findOrFail($id);
+        // S'assurer que l'annonce appartient à l'entreprise connectée
+        $annonce = Annonce::where('user_id', Auth::id())
+            ->findOrFail($id);
+            
         $categories = ['Électronique', 'Vêtements', 'Alimentation', 'Mobilier', 'Services', 'Autre'];
         return view('entreprise.edit', compact('annonce', 'categories'));
     }
@@ -70,7 +89,9 @@ class EntrepriseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $annonce = Annonce::findOrFail($id);
+        // S'assurer que l'annonce appartient à l'entreprise connectée
+        $annonce = Annonce::where('user_id', Auth::id())
+            ->findOrFail($id);
 
         $request->validate([
             'titre' => 'required|string|max:255',
@@ -104,7 +125,9 @@ class EntrepriseController extends Controller
      */
     public function destroy($id)
     {
-        $annonce = Annonce::findOrFail($id);
+        // S'assurer que l'annonce appartient à l'entreprise connectée
+        $annonce = Annonce::where('user_id', Auth::id())
+            ->findOrFail($id);
 
         // Supprimer l'image si elle existe
         if ($annonce->image) {
@@ -117,11 +140,14 @@ class EntrepriseController extends Controller
     }
 
     /**
-     * Afficher les demandes d'achat reçues
+     * Afficher les demandes d'achat reçues pour les annonces de l'entreprise connectée
      */
     public function demandes()
     {
-        $demandes = DemandeAchat::with('annonce')
+        $demandes = DemandeAchat::whereHas('annonce', function($query) {
+                $query->where('user_id', Auth::id());
+            })
+            ->with('annonce')
             ->orderBy('created_at', 'desc')
             ->get();
             
@@ -137,7 +163,12 @@ class EntrepriseController extends Controller
             'statut' => 'required|in:en_attente,accepte,refuse,traite'
         ]);
 
-        $demande = DemandeAchat::findOrFail($id);
+        // S'assurer que la demande concerne une annonce de l'entreprise connectée
+        $demande = DemandeAchat::whereHas('annonce', function($query) {
+                $query->where('user_id', Auth::id());
+            })
+            ->findOrFail($id);
+            
         $demande->update(['statut' => $request->statut]);
 
         return redirect()->route('entreprise.demandes')->with('success', 'Statut de la demande mis à jour !');

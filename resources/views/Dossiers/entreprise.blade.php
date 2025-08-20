@@ -53,7 +53,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="fas fa-building"></i> Interface Entreprise
@@ -71,8 +71,35 @@
                 </a>
             </div>
         </div>
+    </nav> -->
+<!-- Dans la navbar de votre blade -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-building"></i> {{ Auth::user()->name }}
+            </a>
+            <!-- Ou si vous avez un champ spécifique pour l'entreprise -->
+            <!-- <a class="navbar-brand" href="#">
+                <i class="fas fa-building"></i> {{ Auth::user()->entreprise_name ?? Auth::user()->name }}
+            </a> -->
+            
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">
+                    <i class="fas fa-user"></i> Connecté en tant que: <strong>{{ Auth::user()->name }}</strong>
+                </span>
+                <a class="nav-link" href="{{ route('entreprise.demandes') }}">
+                    <i class="fas fa-envelope"></i> Demandes reçues
+                </a>
+                <a class="nav-link" href="{{ route('acheteur.index') }}">
+                    <i class="fas fa-shopping-cart"></i> Vue Acheteur
+                </a>
+                <a class="nav-link" href="{{ route('logout') }}" 
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                </a>
+            </div>
+        </div>
     </nav>
-
     <div class="container mt-4 fade-in">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="h3 text-primary">

@@ -21,12 +21,11 @@ return new class extends Migration
             $table->decimal('prix', 10, 2);
             $table->string('localisation');
             $table->string('image')->nullable();
-            $table->timestamps();
-
-            // Index pour améliorer les performances
-            $table->index(['categorie', 'prix']);
-            $table->index('localisation');
-            $table->index('created_at');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->timestamp('deleted_at')->nullable(); // Pour soft deletes
         });
     }
 
@@ -35,6 +34,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('annonces');
+        Schema::table('annonces', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
+        });
     }
+    
 };

@@ -27,7 +27,7 @@ class AdminController extends Controller
 
         $recent_activities = $this->getRecentActivities();
 
-        return view('admin.dashboard', compact('stats', 'recent_activities'));
+        return view('dossiers.administrateur', compact('stats', 'recent_activities'));
     }
 
     /**

@@ -435,9 +435,9 @@
                 <a href="/login" class="nav-link">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
                 </a>
-                <a href="/register" class="nav-link">
+                <!-- <a href="/register" class="nav-link">
                     <i class="fas fa-user-plus"></i> S'inscrire
-                </a>
+                </a> -->
             </div>
         </div>
     </header>

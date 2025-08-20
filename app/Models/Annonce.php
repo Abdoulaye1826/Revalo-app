@@ -16,7 +16,12 @@ class Annonce extends Model
         'quantite',
         'prix',
         'localisation',
-        'image'
+        'image',
+        'user_id',
+        'status', 
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     protected $casts = [
@@ -63,6 +68,14 @@ class Annonce extends Model
     public function getPrixFormatteAttribute()
     {
         return number_format($this->prix, 0, ',', ' ') . ' FCFA';
+    }
+
+    /**
+     * Relation avec l'utilisateur
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
 

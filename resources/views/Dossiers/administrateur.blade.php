@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #84f8a3ff 0%, #8ee29aff 100%);
             min-height: 100vh;
         }
 
@@ -415,266 +415,38 @@
                     </form>
                 </div>
             </div>
-
-            <!-- Dashboard Section -->
-            <div id="dashboard-section" class="content-wrapper">
-                <!-- Stats Cards -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon users">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-number" id="total-users">156</div>
-                        <div class="stat-label">Utilisateurs Total</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon companies">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="stat-number" id="total-companies">42</div>
-                        <div class="stat-label">Entreprises</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon buyers">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <div class="stat-number" id="total-buyers">98</div>
-                        <div class="stat-label">Acheteurs</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon orders">
-                            <i class="fas fa-clipboard-list"></i>
-                        </div>
-                        <div class="stat-number" id="total-orders">234</div>
-                        <div class="stat-label">Commandes</div>
-                    </div>
+            <!-- Stats Cards -->
+            <div class="stats-grid
+">
+                <div class="stat-card">
+                    <div class="stat-icon users"><i class="fas fa-users"></i></div>
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Utilisateurs</div>
                 </div>
-
-                <!-- Recent Activities -->
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-clock"></i> Activités Récentes
-                        </h3>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Utilisateur</th>
-                                <th>Action</th>
-                                <th>Date</th>
-                                <th>Statut</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Jean Dupont</td>
-                                <td>Inscription Entreprise</td>
-                                <td>15 Aug 2025, 10:30</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                            </tr>
-                            <tr>
-                                <td>Marie Martin</td>
-                                <td>Nouvelle Commande</td>
-                                <td>15 Aug 2025, 09:15</td>
-                                <td><span class="status-badge status-pending">En cours</span></td>
-                            </tr>
-                            <tr>
-                                <td>Pierre Durand</td>
-                                <td>Inscription Acheteur</td>
-                                <td>14 Aug 2025, 16:45</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="stat-card">
+                    <div class="stat-icon companies"><i class="fas fa-building"></i></div>
+                    <div class="stat-number">50</div>
+                    <div class="stat-label">Entreprises</div>
+                </div>  
+                <div class="stat-card">
+                    <div class="stat-icon buyers"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="stat-number">200</div>
+                    <div class="stat-label">Acheteurs</div>
+                </div>  
+                <div class="stat-card">
+                    <div class="stat-icon orders"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="stat-number">75</div>
+                    <div class="stat-label">Commandes</div>
                 </div>
-            </div>
-
-            <!-- Users Section -->
-            <div id="users-section" class="content-wrapper" style="display: none;">
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-users"></i> Gestion des Utilisateurs
-                        </h3>
-                        <button class="btn btn-primary" onclick="openModal('userModal')">
-                            <i class="fas fa-plus"></i> Nouvel Utilisateur
-                        </button>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Email</th>
-                                <th>Type</th>
-                                <th>Date d'inscription</th>
-                                <th>Statut</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="users-table-body">
-                            <tr>
-                                <td>Jean Dupont</td>
-                                <td>jean.dupont@example.com</td>
-                                <td>Entreprise</td>
-                                <td>15 Aug 2025</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                                <td>
-                                    <button class="btn btn-primary" onclick="editUser(1)">Modifier</button>
-                                    <button class="btn btn-danger" onclick="deleteUser(1)">Supprimer</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Marie Martin</td>
-                                <td>marie.martin@example.com</td>
-                                <td>Acheteur</td>
-                                <td>14 Aug 2025</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                                <td>
-                                    <button class="btn btn-primary" onclick="editUser(2)">Modifier</button>
-                                    <button class="btn btn-danger" onclick="deleteUser(2)">Supprimer</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            </div>  
+            <!-- Content Sections -->
+            <div id="dashboard-section" class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-tachometer-alt"></i> Tableau de bord</h2>
                 </div>
-            </div>
+                <p>Bienvenue sur votre tableau de bord. Ici, vous pouvez voir les statistiques clés et gérer les utilisateurs, entreprises et commandes.</p>
+            </div>   
 
-            <!-- Companies Section -->
-            <div id="companies-section" class="content-wrapper" style="display: none;">
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-building"></i> Gestion des Entreprises
-                        </h3>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Nom de l'entreprise</th>
-                                <th>Contact</th>
-                                <th>Secteur</th>
-                                <th>Date d'inscription</th>
-                                <th>Statut</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>TechCorp SARL</td>
-                                <td>contact@techcorp.com</td>
-                                <td>Technologie</td>
-                                <td>10 Aug 2025</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                                <td>
-                                    <button class="btn btn-primary">Voir</button>
-                                    <button class="btn btn-danger">Suspendre</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Buyers Section -->
-            <div id="buyers-section" class="content-wrapper" style="display: none;">
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-shopping-cart"></i> Gestion des Acheteurs
-                        </h3>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Email</th>
-                                <th>Commandes</th>
-                                <th>Total dépensé</th>
-                                <th>Statut</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Marie Martin</td>
-                                <td>marie.martin@example.com</td>
-                                <td>5</td>
-                                <td>1,250€</td>
-                                <td><span class="status-badge status-active">Actif</span></td>
-                                <td>
-                                    <button class="btn btn-primary">Voir</button>
-                                    <button class="btn btn-danger">Suspendre</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Orders Section -->
-            <div id="orders-section" class="content-wrapper" style="display: none;">
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-clipboard-list"></i> Gestion des Commandes
-                        </h3>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>N° Commande</th>
-                                <th>Acheteur</th>
-                                <th>Entreprise</th>
-                                <th>Montant</th>
-                                <th>Date</th>
-                                <th>Statut</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#CMD001</td>
-                                <td>Marie Martin</td>
-                                <td>TechCorp SARL</td>
-                                <td>450€</td>
-                                <td>15 Aug 2025</td>
-                                <td><span class="status-badge status-pending">En cours</span></td>
-                                <td>
-                                    <button class="btn btn-primary">Voir</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Settings Section -->
-            <div id="settings-section" class="content-wrapper" style="display: none;">
-                <div class="content-section">
-                    <div class="section-header">
-                        <h3 class="section-title">
-                            <i class="fas fa-cog"></i> Paramètres du Système
-                        </h3>
-                    </div>
-                    <div class="form-group">
-                        <label>Nom du Site</label>
-                        <input type="text" value="Revalo Platform" />
-                    </div>
-                    <div class="form-group">
-                        <label>Email d'Administration</label>
-                        <input type="email" value="admin@revalo.com" />
-                    </div>
-                    <div class="form-group">
-                        <label>Mode Maintenance</label>
-                        <select>
-                            <option>Désactivé</option>
-                            <option>Activé</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary">Sauvegarder</button>
-                </div>
-            </div>
         </main>
     </div>
 
