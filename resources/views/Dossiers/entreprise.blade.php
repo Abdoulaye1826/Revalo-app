@@ -66,9 +66,12 @@
                     <i class="fas fa-shopping-cart"></i> Vue Acheteur
                 </a>
                 <a class="nav-link" href="{{ route('logout') }}" 
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class="fas fa-sign-out-alt"></i> Déconnexion
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
     </nav> -->
@@ -78,11 +81,9 @@
             <a class="navbar-brand" href="#">
                 <i class="fas fa-building"></i> {{ Auth::user()->name }}
             </a>
-            <!-- Ou si vous avez un champ spécifique pour l'entreprise -->
-            <!-- <a class="navbar-brand" href="#">
-                <i class="fas fa-building"></i> {{ Auth::user()->entreprise_name ?? Auth::user()->name }}
-            </a> -->
-            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>       
             <div class="navbar-nav ms-auto">
                 <span class="navbar-text me-3">
                     <i class="fas fa-user"></i> Connecté en tant que: <strong>{{ Auth::user()->name }}</strong>
@@ -155,18 +156,17 @@
                                         <div><i class="fas fa-box"></i> Quantité: {{ $annonce->quantite }}</div>
                                         <div><i class="fas fa-map-marker-alt"></i> {{ $annonce->localisation }}</div>
                                     </div>
-
-                                    <div class="btn-group w-100" role="group">
+                                    <div class="d-flex gap-2 mb-3">
                                         <a href="{{ route('entreprise.edit', $annonce->id) }}" 
-                                           class="btn btn-outline-primary btn-sm">
-                                            <i class="fas fa-edit"></i> Modifier
+                                           class="btn btn-outline-primary btn-sm flex-fill d-flex align-items-center justify-content-center rounded-pill shadow-sm">
+                                            <i class="fas fa-edit me-1"></i> Modifier
                                         </a>
                                         <button 
-                                            class="btn btn-outline-danger btn-sm"
+                                            class="btn btn-outline-danger btn-sm flex-fill d-flex align-items-center justify-content-center rounded-pill shadow-sm"
                                             data-bs-toggle="modal"
                                             data-bs-target="#deleteModal"
                                             data-annonce-id="{{ $annonce->id }}">
-                                            <i class="fas fa-trash"></i> Supprimer
+                                            <i class="fas fa-trash me-1"></i> Supprimer
                                         </button>
                                     </div>
                                     <!-- Formulaire de suppression caché -->
@@ -193,19 +193,27 @@
     </div>
 
     <!-- Modal de confirmation de suppression -->
-    <div class="modal fade" id="deleteModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirmer la suppression</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-danger text-white rounded-top">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Confirmation de suppression
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
                 </div>
-                <div class="modal-body">
-                    Êtes-vous sûr de vouloir supprimer cette annonce ? Cette action est irréversible.
+                <div class="modal-body text-center">
+                    <i class="fas fa-trash-alt fa-3x text-danger mb-3"></i>
+                    <p class="mb-0 fs-5">Êtes-vous sûr de vouloir supprimer cette annonce ?</p>
+                    <small class="text-muted">Cette action est <span class="fw-bold text-danger">irréversible</span>.</small>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Supprimer</button>
+                <div class="modal-footer justify-content-center border-0 pb-4">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-1"></i> Annuler
+                    </button>
+                    <button type="button" class="btn btn-danger px-4 rounded-pill" id="confirmDeleteBtn">
+                        <i class="fas fa-trash me-1"></i> Supprimer
+                    </button>
                 </div>
             </div>
         </div>

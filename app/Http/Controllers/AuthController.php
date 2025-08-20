@@ -92,7 +92,7 @@ class AuthController extends Controller
             'prenom'         => $request->prenom,
             'nom'            => $request->nom,
             'email'          => $request->email,
-            'telephone'      => $request->phone,
+            'telephone'      => $request->telephone,
             'date_naissance' => $request->date_naissance,
             'sexe'           => $request->sexe,
             'newsletter'     => $request->has('newsletter'),

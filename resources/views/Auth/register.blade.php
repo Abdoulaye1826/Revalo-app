@@ -144,7 +144,7 @@
                                                 required>
                                             <option value="">Sélectionner</option>
                                             <option value="homme" {{ old('sexe') == 'homme' ? 'selected' : '' }}>Homme</option>
-                                            <option value="femmme" {{ old('sexe') == 'femme' ? 'selected' : '' }}>Femme</option>
+                                            <option value="femme" {{ old('sexe') == 'femme' ? 'selected' : '' }}>Femme</option>
                                         </select>
                                         @error('sexe')
                                             <div class="error-message">
