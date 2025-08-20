@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ReValo - Réinventer la gestion durable grâce au numérique. Transformons les déchets en ressources durables et bâtissons un avenir meilleur.">
+    <meta name="keywords" content="ReValo, gestion durable, innovation numérique, économie circulaire, inclusion sociale, environnement">
+    <meta name="author" content="ReValo Team">
+    <link rel="icon" href="recyclage.png" type="image/png">
     <title>ReValo - Réinventer la gestion durable grâce au numérique</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,6 +37,13 @@
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+        }
+        .footer {
+            background: #2ECC71;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
         }
 
         .header.scrolled {
@@ -479,128 +490,169 @@
         <!-- Features Section -->
         <section class="section features" id="features">
             <div class="container">
-                <h2 class="section-title">Notre Mission</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-recycle"></i>
-                        </div>
-                        <h3>Valorisation des déchets</h3>
-                        <p>Nous transformons les déchets en ressources précieuses grâce à des technologies innovantes, créant une économie circulaire vertueuse qui préserve notre planète.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Inclusion numérique</h3>
-                        <p>Notre approche favorise la création d'emplois durables et l'inclusion sociale, en donnant à chacun les outils numériques pour participer à la transition écologique.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Optimisation des ressources</h3>
-                        <p>Grâce à l'intelligence artificielle et l'analyse de données, nous optimisons l'utilisation des ressources naturelles pour un avenir plus durable.</p>
-                    </div>
+            <h2 class="section-title">Notre Mission</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #27AE60;">
+                    <i class="fas fa-recycle"></i>
                 </div>
+                <h3 style="color: #27AE60;">Valorisation des déchets</h3>
+                <p>Nous transformons les déchets en ressources précieuses grâce à des technologies innovantes, créant une économie circulaire vertueuse qui préserve notre planète.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #219150;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 style="color: #219150;">Inclusion numérique</h3>
+                <p>Notre approche favorise la création d'emplois durables et l'inclusion sociale, en donnant à chacun les outils numériques pour participer à la transition écologique.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #43B97F;">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 style="color: #43B97F;">Optimisation des ressources</h3>
+                <p>Grâce à l'intelligence artificielle et l'analyse de données, nous optimisons l'utilisation des ressources naturelles pour un avenir plus durable.</p>
+                </div>
+            </div>
             </div>
         </section>
         <section class="section objetifs" id="objectifs">
             <div class="container">
-                <h2 class="section-title">Pourquoi ReValo ?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Innovation durable</h3>
-                        <p>Nous croyons en une innovation qui respecte l'environnement et améliore la qualité de vie de tous.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Impact global</h3>
-                        <p>Notre vision est de créer un impact positif à l'échelle mondiale, en collaborant avec des partenaires engagés.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Engagement social</h3>
-                        <p>Nous plaçons l'humain au cœur de notre démarche, en favorisant l'accès à la technologie pour tous.</p>
-                    </div>
+            <h2 class="section-title">Pourquoi ReValo ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #27AE60;">
+                    <i class="fas fa-lightbulb"></i>
                 </div>
+                <h3 style="color: #27AE60;">Innovation durable</h3>
+                <p>Nous croyons en une innovation qui respecte l'environnement et améliore la qualité de vie de tous.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #219150;">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 style="color: #219150;">Impact global</h3>
+                <p>Notre vision est de créer un impact positif à l'échelle mondiale, en collaborant avec des partenaires engagés.</p>
+                </div>
+                <div class="feature-card">
+                <div class="feature-icon" style="color: #43B97F;">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 style="color: #43B97F;">Engagement social</h3>
+                <p>Nous plaçons l'humain au cœur de notre démarche, en favorisant l'accès à la technologie pour tous.</p>
+                </div>
+            </div>
             </div>
         </section>
         <section class="section a-propos" id="a-propos" style="background: linear-gradient(135deg, #e8f5e9 60%, #ffffff 100%); position: relative; overflow: hidden;">
             <div class="container" style="position: relative; z-index: 2;">
-                <h2 class="section-title" style="margin-bottom: 2rem;">
-                    <i class="fas fa-seedling" style="color: #27AE60; margin-right: 0.5rem;"></i>
-                    À propos de ReValo
-                </h2>
-                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-                    <div style="flex: 1 1 300px; min-width: 260px;">
-                        <p style="font-size: 1.15rem; color: #333; margin-bottom: 1.2rem;">
-                            <span style="background: #2ECC71; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
-                                <i class="fas fa-recycle"></i>
-                            </span>
-                            ReValo est une initiative qui vise à transformer la gestion des déchets en une opportunité durable grâce à l'innovation numérique.
-                        </p>
-                        <p style="font-size: 1.15rem; color: #333;">
-                            <span style="background: #27AE60; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
-                                <i class="fas fa-leaf"></i>
-                            </span>
-                            Notre mission est de créer un écosystème où les déchets deviennent des ressources, favorisant ainsi une économie circulaire et durable.
-                        </p>
-                        <div style="margin-top: 2rem;">
-                            <button id="joinUsBtn" style="background: #2ECC71; color: #fff; border: none; border-radius: 30px; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(46,204,113,0.15); transition: background 0.2s;">
-                                <i class="fas fa-hands-helping"></i> Rejoignez-nous
-                            </button>
-                        </div>
-                    </div>
-                    <div style="flex: 1 1 300px; min-width: 260px; text-align: center;">
-                        <div style="display: inline-block; background: #fff; border-radius: 50%; box-shadow: 0 8px 32px rgba(46,204,113,0.13); padding: 2rem;">
-                            <i class="fas fa-globe-europe" style="font-size: 3.5rem; color: #27AE60; animation: float 3s ease-in-out infinite;"></i>
-                        </div>
-                        <p style="margin-top: 1.5rem; color: #666; font-style: italic;">
-                            "Chaque déchet peut être valorisé, chaque ressource optimisée, chaque individu acteur d'un avenir plus vert."
-                        </p>
-                    </div>
+            <h2 class="section-title" style="margin-bottom: 2rem; color: #27AE60;">
+                <i class="fas fa-seedling" style="color: #27AE60; margin-right: 0.5rem;"></i>
+                À propos de ReValo
+            </h2>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+                <div style="flex: 1 1 300px; min-width: 260px;">
+                <p style="font-size: 1.15rem; color: #219150; margin-bottom: 1.2rem;">
+                    <span style="background: #2ECC71; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
+                    <i class="fas fa-recycle"></i>
+                    </span>
+                    ReValo est une initiative qui vise à transformer la gestion des déchets en une opportunité durable grâce à l'innovation numérique.
+                </p>
+                <p style="font-size: 1.15rem; color: #219150;">
+                    <span style="background: #27AE60; color: #fff; border-radius: 8px; padding: 0.2rem 0.7rem; font-weight: 600; margin-right: 0.5rem;">
+                    <i class="fas fa-leaf"></i>
+                    </span>
+                    Notre mission est de créer un écosystème où les déchets deviennent des ressources, favorisant ainsi une économie circulaire et durable.
+                </p>
+                <div style="margin-top: 2rem;">
+                    <button id="joinUsBtn" style="background: #27AE60; color: #fff; border: none; border-radius: 30px; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(46,204,113,0.15); transition: background 0.2s;">
+                    <i class="fas fa-hands-helping"></i> Rejoignez-nous
+                    </button>
                 </div>
+                </div>
+                <div style="flex: 1 1 300px; min-width: 260px; text-align: center;">
+                <div style="display: inline-block; background: #fff; border-radius: 50%; box-shadow: 0 8px 32px rgba(46,204,113,0.13); padding: 2rem;">
+                    <i class="fas fa-globe-europe" style="font-size: 3.5rem; color: #27AE60; animation: float 3s ease-in-out infinite;"></i>
+                </div>
+                <p style="margin-top: 1.5rem; color: #43B97F; font-style: italic;">
+                    "Chaque déchet peut être valorisé, chaque ressource optimisée, chaque individu acteur d'un avenir plus vert."
+                </p>
+                </div>
+            </div>
             </div>
             <!-- Decorative SVG background -->
             <svg style="position: absolute; bottom: -40px; right: -60px; z-index: 1;" width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="110" cy="60" rx="110" ry="60" fill="#2ECC71" fill-opacity="0.08"/>
+            <ellipse cx="110" cy="60" rx="110" ry="60" fill="#2ECC71" fill-opacity="0.08"/>
             </svg>
         </section>
-        <!-- Stats Section -->
-        <section class="section stats" id="stats">
+        <section class="section" id="comments">
             <div class="container">
-                <h2 class="section-title">Impacts Attendu</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="87">0</span>
-                        <div class="stat-label">% de réduction des déchets</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="1250">0</span>
-                        <div class="stat-label">Emplois créés</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="45">0</span>
-                        <div class="stat-label">Partenaires engagés</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number" data-target="2300">0</span>
-                        <div class="stat-label">Tonnes CO² économisées</div>
-                    </div>
-                </div>
+            <h2 class="section-title" style="color: #27AE60;">Comment ça marche ?</h2>
+            <p style="text-align: center; font-size: 1.15rem; color: #219150; margin-bottom: 2rem;">
+                ReValo utilise des technologies avancées pour collecter, trier et valoriser les déchets, transformant ainsi les défis environnementaux en opportunités durables.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <img src="/images/collecte.jpg" alt="Collecte des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
+                <img src="/images/trie.jpg" alt="Tri des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
+                <img src="/images/valorisation.jpg" alt="Valorisation des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
+            </div>
             </div>
         </section>
-    </main>
-
-    
+        <!-- Call to Action Section -->
+        <section class="section cta" id="cta" style="background: linear-gradient(135deg, #e8f5e9 60%, #ffffff 100%); position: relative; overflow: hidden;">      
+            <div class="container">
+            <h2 class="section-title" style="color: #27AE60; margin-right: 0.5rem;">Rejoignez le mouvement ReValo</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Ensemble, nous pouvons transformer les déchets en ressources et bâtir un avenir durable pour tous.
+            </p>
+            <button id="joinUsBtn" style="background: #27AE60; color: #fff; border: none; border-radius: 30px; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(46,204,113,0.15); transition: background 0.2s;">
+                <i class="fas fa-hands-helping"></i> Rejoignez-nous
+            </button>
+            </div>
+        </section>
+            <!-- Stats Section -->
+        <section class="section stats" id="stats" style="background: linear-gradient(135deg, #2ECC71, #2ECC71);">
+            <div class="container">
+            <h2 class="section-title" style="color: #fff;">Impacts Attendu</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                <span class="stat-number" data-target="87" style="color: #fff;">0</span>
+                <div class="stat-label" style="color: #e8f5e9;">% de réduction des déchets</div>
+                </div>
+                <div class="stat-card">
+                <span class="stat-number" data-target="1250" style="color: #fff;">0</span>
+                <div class="stat-label" style="color: #e8f5e9;">Emplois créés</div>
+                </div>
+                <div class="stat-card">
+                <span class="stat-number" data-target="45" style="color: #fff;">0</span>
+                <div class="stat-label" style="color: #e8f5e9;">Partenaires engagés</div>
+                </div>
+                <div class="stat-card">
+                <span class="stat-number" data-target="2300" style="color: #fff;">0</span>
+                <div class="stat-label" style="color: #e8f5e9;">Tonnes CO² économisées</div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <footer class="footer" id="footer">
+            <div class="container">
+            <p style="margin-bottom: 0.5rem;">&copy; 2025 ReValo. Tous droits réservés.</p>
+            <!-- <p style="font-size: 0.9rem; opacity: 0.8;">
+                <a href="/privacy-policy" style="color: #fff; text-decoration: underline;">Politique de confidentialité</a> |
+                <a href="/terms-of-service" style="color: #fff; text-decoration: underline;">Conditions d'utilisation</a>
+            </p> -->
+            </div>
+        </footer>
+        <!-- Back to top button -->
+        <a href="#hero" class="back-to-top" style="position: fixed; bottom: 2rem; right: 2rem; background: #27AE60; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); text-decoration: none; font-size: 1.5rem; transition: background 0.3s;">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        </main>
+        <!-- Floating scroll indicator -->
+        <div class="scroll-indicator" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; cursor: pointer; animation: float 3s ease-in-out infinite;">
+            <i class="fas fa-chevron-down" style="font-size: 2rem; color: white;"></i>
+        </div>
     <script>
         // Scroll indicator click scrolls to next section
         document.querySelector('.scroll-indicator').addEventListener('click', function() {
