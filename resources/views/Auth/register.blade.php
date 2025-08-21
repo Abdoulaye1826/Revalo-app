@@ -100,7 +100,7 @@
                                     <input id="telephone" 
                                            type="tel" 
                                            class="form-control-custom @error('telephone') is-invalid @enderror" 
-                                           name="phone" 
+                                           name="telephone" 
                                            value="{{ old('telephone') }}" 
                                            required 
                                            placeholder="+221 XX XXX XX XX">

@@ -53,28 +53,7 @@
     </style>
 </head>
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-building"></i> Interface Entreprise
-            </a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="{{ route('entreprise.demandes') }}">
-                    <i class="fas fa-envelope"></i> Demandes reçues
-                </a>
-                <a class="nav-link" href="{{ route('acheteur.index') }}">
-                    <i class="fas fa-shopping-cart"></i> Vue Acheteur
-                </a>
-                <a class="nav-link" href="{{ route('logout') }}" 
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> Déconnexion
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </div>
-        </div>
-    </nav> -->
+
 <!-- Dans la navbar de votre blade -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
         <div class="container">
@@ -83,21 +62,28 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>       
-            <div class="navbar-nav ms-auto">
-                <span class="navbar-text me-3">
-                    <i class="fas fa-user"></i> Connecté en tant que: <strong>{{ Auth::user()->name }}</strong>
-                </span>
-                <a class="nav-link" href="{{ route('entreprise.demandes') }}">
-                    <i class="fas fa-envelope"></i> Demandes reçues
-                </a>
-                <a class="nav-link" href="{{ route('acheteur.index') }}">
-                    <i class="fas fa-shopping-cart"></i> Vue Acheteur
-                </a>
-                <a class="nav-link" href="{{ route('logout') }}" 
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> Déconnexion
-                </a>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('entreprise.demandes') }}">
+                            <i class="fas fa-envelope"></i> Demandes reçues
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('acheteur.index') }}">
+                            <i class="fas fa-shopping-cart"></i> Vue Acheteur
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-light ms-lg-2 rounded-pill shadow-sm d-flex align-items-center">
+                                <i class="fas fa-sign-out-alt me-1"></i> Déconnexion
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -231,6 +217,22 @@
             if (annonceIdToDelete) {
                 document.getElementById('delete-form-' + annonceIdToDelete).submit();
             }
+        });
+    </script>
+    <script>
+        document.querySelectorAll('form[action="{{ route('logout') }}"]').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': this.querySelector('[name="_token"]').value,
+                        'Accept': 'application/json'
+                    }
+                }).then(() => {
+                    window.location.href = "{{ route('login') }}";
+                });
+            });
         });
     </script>
 </body>

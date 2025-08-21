@@ -116,9 +116,9 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            /* background-image: url('/III.JPG'); */
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>');
+            background-image: url('/bgimage.JPG');
+            /* background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)),  */
+                        /* url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>'); */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -414,6 +414,34 @@
             background: #27AE60;
         }
     </style>
+            <style>
+            @media (max-width: 768px) {
+                #navToggle {
+                    display: block !important;
+                }
+                .nav-links {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    background: #2ECC71;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    width: 100%;
+                    max-width: 260px;
+                    box-shadow: 0 8px 24px rgba(46,204,113,0.13);
+                    padding: 1rem 1.5rem;
+                    gap: 0.7rem;
+                    display: none;
+                    z-index: 1001;
+                }
+                .nav-links.open {
+                    display: flex !important;
+                }
+                .nav-container {
+                    position: relative;
+                }
+            }
+        </style>
 </head>
 <body class ="font-sans antialiased">
     <!-- Header -->
@@ -423,11 +451,16 @@
                 <div class="logo-icon">
                     <i class="fas fa-leaf"></i>
                 </div>
-                <div style="font-size: 2rem; line-height: 1.2;"><div>ReValo</div>
+                <div style="font-size: 2rem; line-height: 1.2;">
+                    <div>ReValo</div>
                     <div class="slogan">Réinventer la gestion durable grâce au numérique</div>
                 </div>
             </div>
-            <div class="nav-links">
+            <!-- Hamburger menu for mobile -->
+            <button id="navToggle" aria-label="Ouvrir le menu" style="background: none; border: none; color: white; font-size: 2rem; display: none; cursor: pointer;">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
                 <a href="#hero" class="nav-link">
                     <i class="fas fa-home"></i> Accueil
                 </a>
@@ -443,16 +476,13 @@
                 <a href="#stats" class="nav-link">
                     <i class="fas fa-chart-bar"></i> Nos Impacts
                 </a>
-                <a href="/login" class="nav-link">
+                <a href="/login" class="nav-link" style="background: #5ee074dc; color: #fafafaff; font-weight: 700;  box-shadow: 0 2px 8px rgba(20, 28, 23, 0.1); transition: background 0.3s, color 0.3s;">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
                 </a>
-                <!-- <a href="/register" class="nav-link">
-                    <i class="fas fa-user-plus"></i> S'inscrire
-                </a> -->
             </div>
         </div>
-    </header>
 
+    </header>
     <!-- Hero Section -->
     <section class="hero" id="hero" style="position: relative;">
         <div class="hero-content" style="position: relative; z-index: 2;">
@@ -590,12 +620,45 @@
             <h2 class="section-title" style="color: #27AE60;">Comment ça marche ?</h2>
             <p style="text-align: center; font-size: 1.15rem; color: #219150; margin-bottom: 2rem;">
                 ReValo utilise des technologies avancées pour collecter, trier et valoriser les déchets, transformant ainsi les défis environnementaux en opportunités durables.
-            </p>
-            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                <img src="/images/collecte.jpg" alt="Collecte des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
-                <img src="/images/trie.jpg" alt="Tri des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
-                <img src="/images/valorisation.jpg" alt="Valorisation des déchets" style="width: 300px; border-radius: 12px; box-shadow: 0 4px 16px rgba(46,204,113,0.13);">
+            <div class="how-it-works-gallery" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                <div class="how-step" style="background: #ddfbd7ff; border-radius: 18px; box-shadow: 0 6px 24px rgba(46,204,113,0.10); padding: 1.2rem 1.2rem 1.8rem 1.2rem; text-align: center; width: 300px; transition: transform 0.3s, box-shadow 0.3s;">
+                    <div style="margin-bottom: 1rem;">
+                        <img src="/connecte.jpg" alt="Collecte des déchets" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(46,204,113,0.10); transition: transform 0.3s;">
+                    </div>
+                    <div style="font-size: 2rem; color: #27AE60; margin-bottom: 0.5rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div style="font-weight: 600; color: #27AE60; margin-bottom: 0.3rem;">Mise en relation (Offreurs ↔ Demandeurs)</div>
+                    <div style="font-size: 0.98rem; color: #219150;">
+                        Mise en relation intelligente entre offreurs et demandeurs de déchets, facilitant la collecte connectée et optimisée pour tous les acteurs (citoyens, entreprises, collectivités).
+                    </div>
+                </div>
+                <div class="how-step" style="background: #ddfbd7ff; border-radius: 18px; box-shadow: 0 6px 24px rgba(46,204,113,0.10); padding: 1.2rem 1.2rem 1.8rem 1.2rem; text-align: center; width: 300px; transition: transform 0.3s, box-shadow 0.3s;">
+                    <div style="margin-bottom: 1rem;">
+                        <img src="/securite.jpg" alt="Tri des déchets" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(46,204,113,0.10); transition: transform 0.3s;">
+                    </div>
+                    <div style="font-size: 2rem; color: #43B97F; margin-bottom: 0.5rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div style="font-weight: 600; color: #43B97F; margin-bottom: 0.3rem;">Transaction & Sécurisation</div>
+                    <div style="font-size: 0.98rem; color: #219150;">
+                        Transactions sécurisées et traçabilité assurée grâce à la technologie numérique, garantissant la transparence et la confiance entre les parties lors de l’échange et du tri des déchets.
+                    </div>
+                </div>
+                <div class="how-step" style="background: #ddfbd7ff; border-radius: 18px; box-shadow: 0 6px 24px rgba(46,204,113,0.10); padding: 1.2rem 1.2rem 1.8rem 1.2rem; text-align: center; width: 300px; transition: transform 0.3s, box-shadow 0.3s;">
+                    <div style="margin-bottom: 1rem;">
+                        <img src="/logistique.jpg" alt="Valorisation des déchets" style="width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(46,204,113,0.10); transition: transform 0.3s;">
+                    </div>
+                    <div style="font-size: 2rem; color: #219150; margin-bottom: 0.5rem;">
+                        <i class="fas fa-truck-moving"></i>
+                    </div>
+                    <div style="font-weight: 600; color: #219150; margin-bottom: 0.3rem;">Logistique & Impact</div>
+                    <div style="font-size: 0.98rem; color: #219150;">
+                        Gestion logistique intelligente pour optimiser le transport et la valorisation des déchets, avec un suivi d'impact environnemental et social mesurable à chaque étape.
+                    </div>
+                </div>
             </div>
+
             </div>
         </section>
         <!-- Call to Action Section -->
@@ -648,11 +711,55 @@
         <a href="#hero" class="back-to-top" style="position: fixed; bottom: 2rem; right: 2rem; background: #27AE60; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); text-decoration: none; font-size: 1.5rem; transition: background 0.3s;">
             <i class="fas fa-arrow-up"></i>
         </a>
-        </main>
+    </main>
         <!-- Floating scroll indicator -->
         <div class="scroll-indicator" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; cursor: pointer; animation: float 3s ease-in-out infinite;">
             <i class="fas fa-chevron-down" style="font-size: 2rem; color: white;"></i>
         </div>
+        
+    <script>
+        // Mobile nav toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+            // Close menu on link click (mobile)
+            navLinks.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(window.innerWidth <= 768) navLinks.classList.remove('open');
+                });
+            });
+        });
+    </script>
+    <script>
+        // Animation on hover for each step
+        document.querySelectorAll('.how-step').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.03)';
+                card.style.boxShadow = '0 12px 32px rgba(46,204,113,0.18)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '0 6px 24px rgba(46,204,113,0.10)';
+            });
+        });
+
+        // Fade-in animation on scroll
+        function animateHowSteps() {
+            document.querySelectorAll('.how-step').forEach((card, idx) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(40px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.7s cubic-bezier(.77,0,.18,1)';
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 200 + idx * 180);
+            });
+        }
+        window.addEventListener('DOMContentLoaded', animateHowSteps);
+    </script>
     <script>
         // Scroll indicator click scrolls to next section
         document.querySelector('.scroll-indicator').addEventListener('click', function() {

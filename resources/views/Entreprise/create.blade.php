@@ -45,7 +45,7 @@
                                         <label for="titre" class="form-label">Titre de l'annonce *</label>
                                         <input type="text" class="form-control" id="titre" name="titre" 
                                                value="{{ old('titre') }}" required 
-                                               placeholder="Ex: iPhone 14 Pro Max 256GB">
+                                               placeholder="Ex: polystérène expansé pour construction">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -74,7 +74,8 @@
                                     <div class="mb-3">
                                         <label for="prix" class="form-label">Prix (FCFA) *</label>
                                         <input type="number" class="form-control" id="prix" name="prix" 
-                                               value="{{ old('prix') }}" required min="0"
+                                               value="{{ old('prix') }}" required min="0" max="999999999"
+                                               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                                placeholder="Ex: 850000">
                                     </div>
                                 </div>
@@ -82,7 +83,8 @@
                                     <div class="mb-3">
                                         <label for="quantite" class="form-label">Quantité disponible *</label>
                                         <input type="number" class="form-control" id="quantite" name="quantite" 
-                                               value="{{ old('quantite') }}" required min="1"
+                                               value="{{ old('quantite') }}" required min="1" max="1000000"
+                                               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
                                                placeholder="Ex: 10">
                                     </div>
                                 </div>

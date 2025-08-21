@@ -80,17 +80,19 @@
                 <i class="fas fa-shopping-cart"></i> Interface Acheteur
             </a>
             <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">
+                    <i class="fas fa-user"></i> Connecté en tant que: <strong>{{ Auth::user()->name }}</strong>
+                </span>
+
                 <a class="nav-link" href="{{ route('acheteur.mes-demandes') }}">
                     <i class="fas fa-list-alt"></i> Mes demandes
                 </a>
-                <a class="nav-link" href="{{ route('entreprise.index') }}">
+                <!-- <a class="nav-link" href="{{ route('entreprise.index') }}">
                     <i class="fas fa-building"></i> Vue Entreprise
+                </a> -->
+                <a class="nav-link" href="{{ route('login') }}">
+                    <i class="fas fa-sign-out-alt"></i> Se connecter
                 </a>
-                <a class="nav-link" href="{{ route('logout') }}" 
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> Déconnexion 
-                </a>
-                
             </div>
         </div>
     </nav>
