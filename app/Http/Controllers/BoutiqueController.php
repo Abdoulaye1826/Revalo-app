@@ -77,35 +77,4 @@ class BoutiqueController extends Controller
 
         return back()->with('success', 'Votre demande d\'achat a été envoyée avec succès !');
     }
-
-    /**
-     * Afficher les demandes de l'acheteur
-     */
-    public function mesDemandes(Request $request)
-    {
-        $email = $request->get('email');
-        
-        if (!$email) {
-            return view('boutique.recherche-demande', [
-                'demandes' => collect(),
-                'email' => null
-            ]);
-        }
-
-        $demandes = DemandeAchat::with('annonce')
-            ->where('email_acheteur', $email)
-            ->orderBy('created_at', 'desc')
-            ->get();
-
-        return view('boutique.recherche-demande', compact('demandes', 'email'));
-    }
-
-    /**
-     * Afficher les détails d'une demande
-     */
-    public function detailsDemande($id)
-    {
-        $demande = DemandeAchat::with('annonce')->findOrFail($id);
-        return view('acheteur.details-demande', compact('demande'));
-    }
 }

@@ -22,11 +22,8 @@
             --shadow-hover: 0 15px 45px rgba(31, 38, 135, 0.5);
         }
         body {
-            /* font-family: 'Inter', sans-serif; */
-            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-            background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), 
+            background: linear-gradient(135deg, rgba(125, 194, 154, 0.8), rgba(144, 209, 171, 0.8)), 
                         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>');
-            /* animation: gradientShift 15s ease infinite; */
             min-height: 100vh;
         }
                 @keyframes gradientShift {
@@ -134,11 +131,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-shopping-cart"></i> Interface Acheteur
+                <i class="fas fa-shopping-cart"></i> ReValo Boutique
             </a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="{{ route('boutique.recherche-demande') }}">
-                    <i class="fas fa-list-alt"></i> Mes demandes
+                 <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Accueil
                 </a>
                 <a class="nav-link" href="{{ route('login') }}">
                     <i class="fas fa-sign-out-alt"></i> Se connecter

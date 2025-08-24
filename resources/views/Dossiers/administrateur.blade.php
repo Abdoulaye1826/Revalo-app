@@ -374,7 +374,7 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2><i class="fas fa-cog"></i> Administration</h2>
+                <h2><i class="fas fa-cog"></i>ReValo Administration</h2>
             </div>
             <nav class="sidebar-menu">
                 <a href="#" class="menu-item active" data-section="dashboard">
