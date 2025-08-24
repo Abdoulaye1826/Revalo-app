@@ -3,163 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ReValo - Réinventer la gestion durable grâce au numérique. Transformons les déchets en ressources durables et bâtissons un avenir meilleur.">
+    <meta name="keywords" content="ReValo, gestion durable, innovation numérique, économie circulaire, inclusion sociale, environnement">
+    <meta name="author" content="ReValo Team">
+    <link rel="icon" href="recyclage.png" type="image/png">
     <title>Interface Entreprise - Gestion des Annonces</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --shadow-soft: 0 8px 32px rgba(31, 38, 135, 0.37);
+            --shadow-hover: 0 15px 45px rgba(31, 38, 135, 0.5);
+        }
         body {
-            background: linear-gradient(135deg, #f8fafc 0%, #e3e9f7 100%);
+            font-family: 'Inter', sans-serif;
+            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+            
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234CAF50;stop-opacity:0.1" /><stop offset="100%" style="stop-color:%232E7D32;stop-opacity:0.3" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="50" fill="%2366BB6A" opacity="0.3"/><circle cx="800" cy="300" r="80" fill="%234CAF50" opacity="0.2"/><circle cx="1000" cy="600" r="60" fill="%2381C784" opacity="0.4"/><path d="M100,400 Q300,200 500,400 T900,400" stroke="%234CAF50" stroke-width="3" fill="none" opacity="0.6"/></svg>');
+            
+            /* background-size: 400% 400%; */
+            /* animation: gradientShift 15s ease infinite; */
             min-height: 100vh;
         }
-        .card {
-            transition: transform 0.15s, box-shadow 0.15s;
-            border-radius: 1rem;
+        @keyframes gradientShift {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
-        .card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-        }
-        .btn-outline-primary, .btn-outline-danger {
-            transition: background 0.2s, color 0.2s;
-        }
-        .btn-outline-primary:hover {
-            background: #0d6efd;
-            color: #fff;
-        }
-        .btn-outline-danger:hover {
-            background: #dc3545;
-            color: #fff;
+        .navbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-soft);
         }
         .navbar-brand {
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 800;
+            color: white !important;
         }
-        .badge {
-            font-size: 0.9em;
+        .nav-link {
+            color: rgba(255,255,255,0.9)!important;
+            font-weight: 500;
+            position: relative;
         }
-        .card-title {
+        .nav-link:hover {color:white!important;}
+        .btn-gradient {
+            background: var(--primary-gradient);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            border: none;
             font-weight: 600;
         }
-        .modal-content {
-            border-radius: 1rem;
+        .page-title {
+            color: white;
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-        .fade-in {
-            animation: fadeIn 0.7s;
+        .card-modern {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px);}
-            to { opacity: 1; transform: none;}
+        .card-modern:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: var(--shadow-hover);
         }
+        .card-image {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .badge-modern {
+            background: var(--primary-gradient);
+            border-radius: 50px;
+            color: white;
+            padding: 6px 14px;
+        }
+        .price-tag {
+            color: #00f2fe;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .btn-edit {background: var(--success-gradient); color: white;}
+        .btn-delete {background: var(--danger-gradient); color: white;}
     </style>
 </head>
 <body>
-
-<!-- Dans la navbar de votre blade -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-building"></i> {{ Auth::user()->name }}
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <a class="navbar-brand" href="#"><i class="fas fa-building me-2"></i>{{ Auth::user()->name }}</a>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-3"><a class="nav-link" href="{{ route('entreprise.demandes') }}"><i class="fas fa-envelope me-1"></i>Demandes</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="{{ route('acheteur.index') }}"><i class="fas fa-shopping-cart me-1"></i>Vue Acheteur</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('entreprise.demandes') }}">
-                            <i class="fas fa-envelope"></i> Demandes reçues
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('acheteur.index') }}">
-                            <i class="fas fa-shopping-cart"></i> Vue Acheteur
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-light ms-lg-2 rounded-pill shadow-sm d-flex align-items-center">
-                                <i class="fas fa-sign-out-alt me-1"></i> Déconnexion
-                            </button>
+                        <form method="POST" action="{{ route('logout') }}">@csrf
+                            <button type="submit" class="btn btn-gradient"><i class="fas fa-sign-out-alt me-1"></i>Déconnexion</button>
                         </form>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container mt-4 fade-in">
+
+    <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="h3 text-primary">
-                <i class="fas fa-bullhorn"></i> Mes Annonces
-            </h1>
-            <a href="{{ route('entreprise.create') }}" class="btn btn-success shadow">
-                <i class="fas fa-plus"></i> Nouvelle Annonce
-            </a>
+            <h1 class="page-title"><i class="fas fa-bullhorn me-2"></i>Mes Annonces</h1>
+            <a href="{{ route('entreprise.create') }}" class="btn btn-gradient"><i class="fas fa-plus me-1"></i>Nouvelle</a>
         </div>
-
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fas fa-check-circle"></i> {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="fas fa-exclamation-circle"></i> {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
 
         @if($annonces->count() > 0)
             <div class="row g-4">
                 @foreach($annonces as $annonce)
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card-modern h-100">
                             @if($annonce->image)
-                                <img src="{{ asset('storage/' . $annonce->image) }}" 
-                                     class="card-img-top" 
-                                     style="height: 200px; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem;"
-                                     alt="{{ $annonce->titre }}">
+                                <img src="{{ asset('storage/' . $annonce->image) }}" class="card-image" alt="{{ $annonce->titre }}">
                             @else
-                                <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
-                                     style="height: 200px; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
-                                    <i class="fas fa-image text-muted fa-3x"></i>
+                                <div class="card-image d-flex align-items-center justify-content-center bg-light">
+                                    <i class="fas fa-image fa-2x text-muted"></i>
                                 </div>
                             @endif
-
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-truncate">{{ $annonce->titre }}</h5>
-                                <p class="card-text text-muted small">{{ Str::limit($annonce->description, 100) }}</p>
-                                
-                                <div class="mt-auto">
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span class="badge bg-secondary">{{ $annonce->categorie }}</span>
-                                        <strong class="text-success">{{ number_format($annonce->prix, 0, ',', ' ') }} FCFA</strong>
-                                    </div>
-                                    
-                                    <div class="small text-muted mb-3">
-                                        <div><i class="fas fa-box"></i> Quantité: {{ $annonce->quantite }}</div>
-                                        <div><i class="fas fa-map-marker-alt"></i> {{ $annonce->localisation }}</div>
-                                    </div>
-                                    <div class="d-flex gap-2 mb-3">
-                                        <a href="{{ route('entreprise.edit', $annonce->id) }}" 
-                                           class="btn btn-outline-primary btn-sm flex-fill d-flex align-items-center justify-content-center rounded-pill shadow-sm">
-                                            <i class="fas fa-edit me-1"></i> Modifier
-                                        </a>
-                                        <button 
-                                            class="btn btn-outline-danger btn-sm flex-fill d-flex align-items-center justify-content-center rounded-pill shadow-sm"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal"
-                                            data-annonce-id="{{ $annonce->id }}">
-                                            <i class="fas fa-trash me-1"></i> Supprimer
-                                        </button>
-                                    </div>
-                                    <!-- Formulaire de suppression caché -->
-                                    <form id="delete-form-{{ $annonce->id }}" action="{{ route('entreprise.destroy', $annonce->id) }}" method="POST" style="display:none;">
-                                        @csrf
-                                        @method('DELETE')
-                                    </form>
+                            <div class="p-3">
+                                <h5 class="text-white fw-bold">{{ $annonce->titre }}</h5>
+                                <p class="text-white-50 small">{{ Str::limit($annonce->description, 100) }}</p>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge-modern">{{ $annonce->categorie }}</span>
+                                    <span class="price-tag">{{ number_format($annonce->prix, 0, ',', ' ') }} FCFA</span>
+                                </div>
+                                <div class="text-white-50 small mb-3">
+                                    <div><i class="fas fa-box me-1"></i>{{ $annonce->quantite }}</div>
+                                    <div><i class="fas fa-map-marker-alt me-1"></i>{{ $annonce->localisation }}</div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="{{ route('entreprise.edit', $annonce->id) }}" class="btn btn-edit btn-sm flex-fill"><i class="fas fa-edit me-1"></i>Modifier</a>
+                                    <form id="delete-form-{{ $annonce->id }}" action="{{ route('entreprise.destroy', $annonce->id) }}" method="POST" style="display:none;">@csrf @method('DELETE')</form>
+                                    <button data-annonce-id="{{ $annonce->id }}" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-delete btn-sm flex-fill"><i class="fas fa-trash me-1"></i>Supprimer</button>
                                 </div>
                             </div>
                         </div>
@@ -167,39 +158,28 @@
                 @endforeach
             </div>
         @else
-            <div class="text-center py-5">
-                <i class="fas fa-bullhorn fa-4x text-muted mb-3"></i>
-                <h4 class="text-muted">Aucune annonce créée</h4>
-                <p class="text-muted">Commencez par créer votre première annonce</p>
-                <a href="{{ route('entreprise.create') }}" class="btn btn-primary shadow">
-                    <i class="fas fa-plus"></i> Créer une annonce
-                </a>
+            <div class="text-center py-5 text-white">
+                <i class="fas fa-bullhorn fa-4x opacity-50 mb-3"></i>
+                <h4>Aucune annonce créée</h4>
+                <a href="{{ route('entreprise.create') }}" class="btn btn-gradient mt-3"><i class="fas fa-plus"></i> Créer</a>
             </div>
         @endif
     </div>
 
-    <!-- Modal de confirmation de suppression -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <!-- Modal de suppression -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content shadow-lg border-0">
-                <div class="modal-header bg-danger text-white rounded-top">
-                    <h5 class="modal-title" id="deleteModalLabel">
-                        <i class="fas fa-exclamation-triangle me-2"></i> Confirmation de suppression
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            <div class="modal-content" style="background:var(--glass-bg);backdrop-filter:blur(15px);">
+                <div class="modal-header" style="background:var(--danger-gradient);color:white;">
+                    <h5 class="modal-title"><i class="fas fa-exclamation-triangle me-1"></i> Supprimer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <i class="fas fa-trash-alt fa-3x text-danger mb-3"></i>
-                    <p class="mb-0 fs-5">Êtes-vous sûr de vouloir supprimer cette annonce ?</p>
-                    <small class="text-muted">Cette action est <span class="fw-bold text-danger">irréversible</span>.</small>
+                <div class="modal-body text-white text-center">
+                    Êtes-vous sûr de vouloir supprimer cette annonce ?
                 </div>
-                <div class="modal-footer justify-content-center border-0 pb-4">
-                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">
-                        <i class="fas fa-times me-1"></i> Annuler
-                    </button>
-                    <button type="button" class="btn btn-danger px-4 rounded-pill" id="confirmDeleteBtn">
-                        <i class="fas fa-trash me-1"></i> Supprimer
-                    </button>
+                <div class="modal-footer justify-content-center">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button class="btn btn-delete" id="confirmDeleteBtn">Supprimer</button>
                 </div>
             </div>
         </div>
@@ -208,31 +188,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let annonceIdToDelete = null;
-        const deleteModal = document.getElementById('deleteModal');
-        deleteModal.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            annonceIdToDelete = button.getAttribute('data-annonce-id');
+        document.getElementById('deleteModal').addEventListener('show.bs.modal', function(event){
+            annonceIdToDelete = event.relatedTarget.getAttribute('data-annonce-id');
         });
-        document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
-            if (annonceIdToDelete) {
+        document.getElementById('confirmDeleteBtn').addEventListener('click', function(){
+            if(annonceIdToDelete){
                 document.getElementById('delete-form-' + annonceIdToDelete).submit();
             }
-        });
-    </script>
-    <script>
-        document.querySelectorAll('form[action="{{ route('logout') }}"]').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                fetch(this.action, {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': this.querySelector('[name="_token"]').value,
-                        'Accept': 'application/json'
-                    }
-                }).then(() => {
-                    window.location.href = "{{ route('login') }}";
-                });
-            });
         });
     </script>
 </body>

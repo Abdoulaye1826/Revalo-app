@@ -18,13 +18,12 @@
                 <i class="fas fa-shopping-cart"></i> Interface Acheteur
             </a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="{{ route('acheteur.index') }}">
+                <a class="nav-link" href="{{ route('boutique.index') }}">
                     <i class="fas fa-arrow-left"></i> Retour au catalogue
                 </a>
             </div>
         </div>
     </nav>
-
     <div class="container mt-4">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">

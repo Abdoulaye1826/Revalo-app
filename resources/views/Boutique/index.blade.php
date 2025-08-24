@@ -137,11 +137,8 @@
                 <i class="fas fa-shopping-cart"></i> Interface Acheteur
             </a>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="{{ route('acheteur.mes-demandes') }}">
+                <a class="nav-link" href="{{ route('boutique.recherche-demande') }}">
                     <i class="fas fa-list-alt"></i> Mes demandes
-                </a>
-                <a class="nav-link" href="{{ route('entreprise.index') }}">
-                    <i class="fas fa-building"></i> Vue Entreprise
                 </a>
                 <a class="nav-link" href="{{ route('login') }}">
                     <i class="fas fa-sign-out-alt"></i> Se connecter

@@ -10,8 +10,7 @@
     <link rel="icon" href="recyclage.png" type="image/png">
     <title>ReValo - Réinventer la gestion durable grâce au numérique</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
     <style>
         * {
             margin: 0;
@@ -413,35 +412,34 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #27AE60;
         }
-    </style>
-            <style>
-            @media (max-width: 768px) {
-                #navToggle {
-                    display: block !important;
-                }
-                .nav-links {
-                    position: absolute;
-                    top: 100%;
-                    right: 0;
-                    background: #2ECC71;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    width: 100%;
-                    max-width: 260px;
-                    box-shadow: 0 8px 24px rgba(46,204,113,0.13);
-                    padding: 1rem 1.5rem;
-                    gap: 0.7rem;
-                    display: none;
-                    z-index: 1001;
-                }
-                .nav-links.open {
-                    display: flex !important;
-                }
-                .nav-container {
-                    position: relative;
-                }
+    
+        @media (max-width: 768px) {
+            #navToggle {
+                display: block !important;
             }
-        </style>
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #2ECC71;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
+                max-width: 260px;
+                box-shadow: 0 8px 24px rgba(46,204,113,0.13);
+                padding: 1rem 1.5rem;
+                gap: 0.7rem;
+                display: none;
+                z-index: 1001;
+            }
+            .nav-links.open {
+                display: flex !important;
+            }
+            .nav-container {
+                position: relative;
+            }
+        }
+    </style>
 </head>
 <body class ="font-sans antialiased">
     <!-- Header -->
@@ -478,6 +476,9 @@
                 </a>
                 <a href="/login" class="nav-link" style="background: #5ee074dc; color: #fafafaff; font-weight: 700;  box-shadow: 0 2px 8px rgba(20, 28, 23, 0.1); transition: background 0.3s, color 0.3s;">
                     <i class="fas fa-sign-in-alt"></i> Se connecter
+                </a>
+                <a href="/boutique" class="nav-link" style="background: #5ee074dc; color: #fafafaff; font-weight: 700;  box-shadow: 0 2px 8px rgba(20, 28, 23, 0.1); transition: background 0.3s, color 0.3s;">
+                    <i class="fas fa-store"></i> Boutique
                 </a>
             </div>
         </div>

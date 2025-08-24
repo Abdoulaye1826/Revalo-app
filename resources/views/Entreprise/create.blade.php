@@ -73,9 +73,7 @@
                                 <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="prix" class="form-label">Prix (FCFA) *</label>
-                                        <input type="number" class="form-control" id="prix" name="prix" 
-                                               value="{{ old('prix') }}" required min="0" max="999999999"
-                                               oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                        <input type="number" class="form-control" id="prix" name="prix" min="0"
                                                placeholder="Ex: 850000">
                                     </div>
                                 </div>

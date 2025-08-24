@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\AcheteurController;
+use App\Http\Controllers\BoutiqueController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -58,4 +59,13 @@ Route::prefix('administrateur')->name('administrateur.')->group(function () {
     Route::get('/utilisateurs', [AdminController::class, 'utilisateurs'])->name('utilisateurs');
     Route::delete('/annonce/{id}', [AdminController::class, 'deleteAnnonce'])->name('deleteAnnonce');
     Route::delete('/utilisateur/{id}', [AdminController::class, 'deleteUser'])->name('deleteUser');
+});
+
+Route::prefix('boutique')->name('boutique.')->group(function () {
+    Route::get('/', [BoutiqueController::class, 'index'])->name('index');
+    Route::get('/index', [BoutiqueController::class, 'index'])->name('index');
+    Route::get('/produit/{id}', [BoutiqueController::class, 'show'])->name('produit.show');
+    Route::post('/demande/{id}', [BoutiqueController::class, 'envoyerDemande'])->name('demande');
+    Route::get('/mes-demandes', [BoutiqueController::class, 'mesDemandes'])->name('mes-demandes');
+    Route::get('/recherche-demande', [BoutiqueController::class, 'mesDemandes'])->name('recherche-demande');
 });
